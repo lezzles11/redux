@@ -4,17 +4,21 @@ import PropTypes from 'prop-types'
 class Counter extends Component {
   constructor(props) {
     super(props);
+    // Declaring the two components 
     this.incrementAsync = this.incrementAsync.bind(this);
     this.incrementIfOdd = this.incrementIfOdd.bind(this);
   }
 
   incrementIfOdd() {
+    // if the value that is passed in is odd 
     if (this.props.value % 2 !== 0) {
+      // then increment 
       this.props.onIncrement()
     }
   }
 
   incrementAsync() {
+    // set a timer - increment that function that is passed in 
     setTimeout(this.props.onIncrement, 1000)
   }
 
