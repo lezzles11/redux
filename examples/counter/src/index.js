@@ -9,8 +9,11 @@ const rootEl = document.getElementById('root')
 
 const render = () => ReactDOM.render(
   <Counter
+    // value.getState() -> from the redux store
     value={store.getState()}
+    // on increment, dispatch the type 
     onIncrement={() => store.dispatch({ type: 'INCREMENT' })}
+    // on decrement, dispatch the type
     onDecrement={() => store.dispatch({ type: 'DECREMENT' })}
   />,
   rootEl
